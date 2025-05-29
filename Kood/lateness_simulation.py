@@ -2,8 +2,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 
-INPUT_PATH = "C:\\Users\\PC\\Desktop\\andmed.csv"
-SIMULATIONS = 1000
+INPUT_PATH = "C:\\Users\\PC\\Desktop\\lõppandmed.csv"
+SIMULATIONS = 10000
 
 # Open the processed data file
 with open(INPUT_PATH, "r") as file:
