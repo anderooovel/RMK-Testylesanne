@@ -17,6 +17,15 @@ So, the bus needs to arrive at Toompark no later than 09:01, or she’ll be late
 - Collected real-time data about bus number 8 from [TLT's open data API](https://transport.tallinn.ee/gps.txt) - [see code](https://github.com/anderooovel/RMK-Testylesanne/blob/main/Kood/data_collection.py)
 - Logged when each bus left Zoo and arrived at Toompark
 - Used that data to calculate trip durations — [see code](https://github.com/anderooovel/RMK-Testylesanne/blob/main/Kood/process_bus_data.py)
+
+Here is a preview of the processed data used for the analysis:
+
+| Zoo buss algusaeg | Toomparki jõudmise aeg | Kulunud aeg | Kuupäev  |
+|------------------|------------------------|-------------|----------|
+| 07:56:33         | 08:09:57               | 00:13:24    | 15.05.25 |
+| 08:07:35         | 08:20:27               | 00:12:52    | 15.05.25 |
+| 08:18:36         | 08:30:55               | 00:12:19    | 15.05.25 |
+
 - Simulated different home departure times (from 08:00 to 08:59, in 10-second intervals)
 - For each home departure time, randomly selected one of the valid upcoming buses and sampled a historical travel duration (Monte Carlo–style simulation)
 - Checked whether Rita would arrive before 09:05, based on the simulated trip
