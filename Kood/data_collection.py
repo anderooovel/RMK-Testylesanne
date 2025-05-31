@@ -13,12 +13,14 @@ URL = "https://transport.tallinn.ee/gps.txt"
 
 
 # Loop through all URLs (currently 620 iterations).
+# Chose 620 iterations because 1 loop takes about 15 seconds and so 620 is enough for like 620x15 ~ 2,5hrs.
 for iteration in range(0, 620):
     records = []  # Store all valid bus data for this load.
     # Since the URL doesn't provide timestamp, get current time manually.
     estonian_time = datetime.now(ESTONIAN_TIMEZONE).strftime('%H:%M:%S')
     current_date = datetime.now(ESTONIAN_TIMEZONE).strftime('%d.%m.%y')
 
+    # Probably could take service and driver out of the loop.
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.get(URL)  # Open URL
